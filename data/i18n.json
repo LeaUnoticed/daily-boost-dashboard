@@ -1,0 +1,23 @@
+{
+  "en": {
+    "todo_title": "TO DO",
+    "placeholder": "Add task...",
+    "timezone": "America/New_York",
+    "city": "New York",
+    "todo_stats": "Tasks Completed: 0/0"
+  },
+  "ja": {
+    "todo_title": "やることリスト",
+    "placeholder": "タスクを追加...",
+    "timezone": "Asia/Tokyo",
+    "city": "Tokyo",
+    "todo_stats": "達成されたタスク: 0/0"
+  },
+  "zh": {
+    "todo_title": "待办事项",
+    "placeholder": "添加任务...",
+    "timezone": "Asia/Shanghai",
+    "city": "Beijing",
+    "todo_stats": "完成任务：0/0"
+  }
+}

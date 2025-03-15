@@ -1,0 +1,456 @@
+:root {
+  --ghibli-beige: #f7e9b9;
+  --ghibli-brown: #a17958;
+  --ghibli-green: #a8c69f;
+  --ghibli-blue: #bcdff5;
+  --ghibli-pink: #fce2e1;
+  --ghibli-white: #fbf7ea;
+  --pixel-font: "Press Start 2P", monospace;
+}
+
+body {
+  background: #f1ebd8;
+  font-family: var(--pixel-font);
+}
+
+.shelf {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: none;
+  margin: 8rem 0rem 2rem 9rem;
+  max-width: 320px;
+  height: 114px;
+  position: relative;
+  border-bottom: solid 2rem #776352;
+  min-width: 320px;
+}
+
+.book {
+  width: 25px;
+  height: 40px;
+  background: var(--ghibli-pink);
+  margin-right: 4px;
+  border-radius: 2px;
+  transform: rotate(0deg);
+}
+
+.book:nth-child(2) {
+  background: var(--ghibli-green);
+  height: 65px;
+}
+
+.book:nth-child(3) {
+  background: var(--ghibli-blue);
+  height: 55px;
+  transform: rotate(0deg);
+}
+
+.tree {
+  width: 65px;
+  height: 65px;
+  background: var(--ghibli-green);
+  border-radius: 50% 50% 50% 50%;
+  position: relative;
+  margin-right: 26px;
+  margin-bottom: 12px;
+}
+
+.tree::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 11px;
+  height: 13px;
+  background: var(--ghibli-brown);
+}
+
+.window {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, var(--ghibli-blue), white);
+  border: 19px solid white;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  position: absolute;
+  width: 93%;
+  height: 21vh;
+  margin: 0;
+  top: 0;
+  left: 18px;
+  right: 0px;
+}
+
+.addon {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.7rem;
+}
+
+.lang-selector {
+  position: absolute;
+  right: 5%;
+  z-index: 100;
+  top: 3%;
+}
+.lang-selector #lang-select {
+  background: #fbf7ea;
+  color: #a17958;
+  padding: 10px 10px;
+  border-radius: 2rem;
+  border: solid #a17958 5px;
+}
+
+.window {
+  position: absolute;
+  width: 95%;
+  height: 24vh;
+  border: 11px solid white;
+  overflow: hidden;
+  border-radius: 0px;
+  background: #fbe8a6;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  top: -11px;
+}
+.window .star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: star-twinkle 4s infinite ease-in-out;
+  box-shadow: 0 0 2px white;
+}
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+.window .sun, .window .moon {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.window .sun {
+  background: #ffdf6c;
+  box-shadow: 0 0 20px rgba(255, 223, 108, 0.7);
+}
+.window .moon {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background: #fff;
+  border-radius: 50%;
+  top: 20px;
+  left: 60px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  z-index: 2;
+}
+.window .cloud {
+  position: absolute;
+  background: #fff;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  opacity: 0.7;
+  top: 30px;
+}
+.window .cloud1 {
+  left: 10%;
+}
+.window .cloud2 {
+  left: 60%;
+  top: 65%;
+}
+.window .cloud3 {
+  right: 10%;
+  top: 20%;
+}
+
+.tv {
+  background: var(--ghibli-white);
+  padding: 1.5rem;
+  border: 30px solid var(--ghibli-brown);
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  display: flex;
+  height: 25rem;
+  max-height: 27rem;
+  min-height: 27rem;
+  max-width: 800px;
+}
+.tv .screen {
+  display: flex;
+  gap: 1rem;
+}
+
+#weather {
+  background: #bcdff5;
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 14rem;
+  display: flex;
+  align-items: normal;
+  gap: 2rem;
+  border: solid #9ecce9 3px;
+}
+#weather #weather-icon {
+  width: 7rem;
+  height: 7rem;
+  align-self: center;
+  image-rendering: pixelated;
+}
+#weather .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#weather .infos #temp {
+  font-size: 3rem;
+  color: #333232;
+}
+
+.clock-block {
+  background: #c1a173;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: solid #776352 3px;
+}
+
+.analog-clock {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border: 6px solid var(--rikyu);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 6px #fff, 0 0 6px rgba(0, 0, 0, 0.1);
+  border: solid #ebd58e 4px;
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: rotate(90deg);
+  border-radius: 2px;
+  z-index: 2;
+}
+.hand.hour {
+  height: 25%;
+  width: 4px;
+  background: #292828;
+}
+.hand.minute {
+  height: 35%;
+  width: 3px;
+  background: #292828;
+}
+.hand.second {
+  height: 45%;
+  width: 1px;
+  background: #292828;
+  z-index: 3;
+}
+
+.center-dot {
+  width: 10px;
+  height: 10px;
+  background: #292828;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+}
+
+.todo {
+  background: #a8c69f;
+  padding: 2rem;
+  border-radius: 8px;
+  border: solid #7a9971 3px;
+  width: 25rem;
+}
+.todo h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: var(--pixel-font);
+  color: white;
+}
+.todo ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.todo ul li {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.3rem;
+  border-bottom: 1px dashed #aaa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.todo ul li.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.todo input {
+  font-family: inherit;
+  font-size: 0.7rem;
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  width: 100%;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+.todo-footer #reset-todo {
+  background: var(--rikyu);
+  color: white;
+  font-family: inherit;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.music {
+  background: #c1a173;
+  padding: 19px;
+  border-radius: 1rem;
+  color: white;
+  font-size: 0.75rem;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+  display: flex;
+  border: solid #776352 3px;
+  width: 7rem;
+}
+.music button {
+  background: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #776352;
+}
+.music #volume-slider {
+  height: 8px;
+  background: #fff;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  width: 100px;
+}
+.music #volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--tv-brown);
+}
+
+.bunny {
+  width: 55px;
+  height: 50px;
+  background: white;
+  border-radius: 17px;
+  position: relative;
+  margin-top: -10px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.bunny .ear {
+  width: 8px;
+  height: 29px;
+  background: #d9a7a5;
+  position: absolute;
+  top: -34px;
+  border-radius: 12px 14px 0px 0px;
+  transform-origin: bottom center;
+  border: solid white 6px;
+}
+
+.bunny .ear.left {
+  left: 3px;
+}
+
+.bunny .ear.right {
+  right: 3px;
+}
+
+.bunny-eyes {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 18px;
+}
+
+.bunny-eyes .eye {
+  width: 6px;
+  height: 6px;
+  background: black;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.bunny .mouth {
+  width: 19px;
+  height: 6px;
+  background: #d9a7a5;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.6;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+#bunny-dialog {
+  position: absolute;
+  top: -23px;
+  background: white;
+  padding: 9px 9px;
+  border-radius: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */

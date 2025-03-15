@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zen TV Dashboard</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <div class="room">
+    <div class="lang-selector">
+      <select id="lang-select">
+        <option value="en">🇺🇸 USA</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+    <div class="window" id="sky">
+      <div id="sky" class="sky">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+        <div class="sun" id="sun"></div>
+        <div class="moon" id="moon"></div>
+        <div class="stars" id="stars"></div>
+        <div class="shooting-star" id="shooting-star"></div>
+      </div>
+    </div>
+
+    <div class="shelf">
+      <div class="tree"></div>
+      <div class="book pink"></div>
+      <div class="book green"></div>
+      <div class="book blue"></div>
+      <div class="bunny">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="bunny-eyes">
+          <div class="eye right"></div>
+          <div class="eye left"></div>
+        </div>
+        <div class="mouth"></div>
+      </div>
+      <div class="bunny-dialog" id="bunny-dialog">...</div>
+    </div>
+    <div class="tv">
+      <div class="screen">
+        <div>
+          <div class="weather" id="weather">
+            <img id="weather-icon" src="assets/img/sun.png" alt="Weather Icon">
+            <div class="infos">
+              <div id="temp">22°</div>
+              <div id="date">--/--/----</div>
+            </div>
+          </div>
+          <div class="addon">
+            <div class="clock-block">
+              <div class="analog-clock" id="analog-clock">
+                <div class="hand hour" id="hand-hour"></div>
+                <div class="hand minute" id="hand-minute"></div>
+                <div class="hand second" id="hand-second"></div>
+                <div class="center-dot"></div>
+              </div>
+            </div>
+            <div class="music">
+              <button id="play-music">▶</button>
+              <div id="song-title">Lofi chill</div>
+              <input type="range" id="volume-slider" min="0" max="100" value="50" />
+            </div>
+          </div>
+        </div>
+        <div class="todo">
+          <h2 data-i18n="todo_title">TO DO</h2>
+          <ul id="todo-list"></ul>
+          <input type="text" id="todo-input" placeholder="Add task..." />
+          <div class="todo-footer">
+            <div id="todo_stats"></div>
+            <button id="reset-todo">Reset Tasks</button>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+#weather {
+    background: #bcdff5;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: 14rem;
+    display: flex;
+    align-items: normal;
+    gap: 2rem;
+    border: solid #9ecce9 3px;
+
+    #weather-icon {
+        width: 7rem;
+        height: 7rem;
+        align-self: center;
+        image-rendering: pixelated;
+    }
+
+    .infos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        #temp {
+            font-size: 3rem;
+            color: #333232;
+        }
+    }
+}
